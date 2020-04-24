@@ -10,8 +10,11 @@ import { ApiService } from '../../services/api.service';
 })
 
 export class EpisodesPage implements OnInit {
+    
   episodes: Observable<any>;
+  
   constructor(private router: Router, private api: ApiService) { }
+  
   ngOnInit() {
       this.episodes = this.api.getEpisodes();
   }
