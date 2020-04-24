@@ -10,10 +10,15 @@ import { ApiService } from '../../services/api.service';
 })
 
 export class CharactersPage implements OnInit {
+
   characters: Observable<any>;
+
   constructor(private router: Router, private api: ApiService) { }
+  
   ngOnInit() {
       this.characters = this.api.getCharacters();
+      this.characters.subscribe(data => {console.log('myCharacters: ',data);
+    });
   }
 
   openDetails(character) {
