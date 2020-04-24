@@ -1,9 +1,54 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>characterDetails</ion-title>
+
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaulthref="/tabs/characters"></ion-back-button>
+    </ion-buttons>
+    
+    <ion-title>Character Details</ion-title>
+ 
   </ion-toolbar>
+
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <ion-card *ngIf="character" class="movie-card">
 
+    <ion-item class="movie-info" lines="none">
+      <ion-icon name="finger-print-outline" slot="start"></ion-icon>
+      Name: {{ character.name }}
+    </ion-item>
+
+    <ion-item class="movie-info" lines="none">
+      <ion-icon name="glasses-outline" slot="start"></ion-icon>
+      Nickname: {{ character.nickname }}
+    </ion-item>
+
+    <ion-item class="movie-info" lines="none">
+      <ion-icon name="calendar" slot="start"></ion-icon>
+      Day of Birth: {{ character.birthday }}
+    </ion-item>
+    
+    <ion-item class="movie-info" lines="none">
+      <ion-icon name="hammer-outline" slot="start"></ion-icon>
+      Occupation: {{ character.occupation }}
+    </ion-item>
+
+    <ion-item class="movie-info" lines="none">
+      <ion-icon name="pulse-outline" slot="start"></ion-icon>
+      Status: {{ character.status }}
+    </ion-item>
+    
+    <ion-item class="movie-info" lines="none">
+      <ion-icon name="reader-outline" slot="start"></ion-icon>
+      Appearance: {{ character.appearance }}
+    </ion-item>
+
+    <ion-item class="movie-info" lines="none">
+      <ion-icon name="play-outline" slot="start"></ion-icon>
+      Portrayed by: {{ character.portrayed }}
+    </ion-item>
+
+  </ion-card>
 </ion-content>

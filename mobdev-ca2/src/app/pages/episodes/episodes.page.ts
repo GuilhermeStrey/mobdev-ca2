@@ -27,8 +27,8 @@ export class EpisodesPage implements OnInit {
   }
 
   loadEpisodes(){
-    this.episodes = this.api.getEpisodes(this.offset);
-    this.episodes.subscribe(data => {console.log('myEpisodes: ',data);
+      this.episodes = this.api.getEpisodes(this.offset);
+      this.episodes.subscribe(data => {console.log('myEpisodes: ',data);
     })
   }
 
