@@ -12,17 +12,24 @@ import { ApiService } from '../../services/api.service';
 export class EpisodesPage implements OnInit {
     
   episodes: Observable<any>;
-  
+  offset = 0;
+
+
   constructor(private router: Router, private api: ApiService) { }
   
   ngOnInit() {
-      this.episodes = this.api.getEpisodes();
-      this.episodes.subscribe(data => {console.log('myEpisodes: ',data);
-    });
+      this.loadEpisodes();
   }
 
-  openDetails(episode) {
-      let episodeId = episode.episodeId;
+  openDetails(episodes) {
+      let episodeId = episodes;
       this.router.navigateByUrl(`/tabs/episodes/${episodeId}`);
   }
+
+  loadEpisodes(){
+    this.episodes = this.api.getEpisodes(this.offset);
+    this.episodes.subscribe(data => {console.log('myEpisodes: ',data);
+    })
+  }
+
 }
