@@ -35,9 +35,9 @@ export class ApiService {
       return this.http.get(`https://breakingbadapi.com/api/quotes/${id}`) 
   }   
 
-  getDeaths() {
-      return this.http.get(`https://breakingbadapi.com/api/death-count?name=Gustavo+Fring`) 
-  }  
+  getDeaths(offset) {
+      return this.http.get(`https://breakingbadapi.com/api/deaths`) 
+  }
 
   findEpisode(search) {
       return this.http.get(`https://breakingbadapi.com/api/episodes/${search}`) 
