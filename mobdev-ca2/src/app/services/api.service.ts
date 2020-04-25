@@ -9,7 +9,7 @@ export class ApiService {
   constructor(private http: HttpClient) {  }
 
   getEpisodes(offset) {
-      return this.http.get(`https://breakingbadapi.com/api/episodes?offset=${offset}&limit=25`) 
+      return this.http.get(`https://breakingbadapi.com/api/episodes`) 
       //return this.http.get(`https://8100-aefd1589-6ba1-4286-b8b9-26e2ed703837.ws-eu01.gitpod.io/assets/episodes.json`)
   }
 
@@ -19,7 +19,7 @@ export class ApiService {
   }
 
   getCharacters(offset) {
-      return this.http.get(`https://breakingbadapi.com/api/characters?offset=${offset}&limit=25`) 
+      return this.http.get(`https://breakingbadapi.com/api/characters?limit=25&offset=${offset}`) 
       //return this.http.get(`https://8100-aefd1589-6ba1-4286-b8b9-26e2ed703837.ws-eu01.gitpod.io/assets/characters.json`)
   }
 
