@@ -21,11 +21,6 @@ export class QuotesPage implements OnInit {
     this.loadQuotes();
   }
 
-  openDetails(quotes) {
-    let quotesId = quotes;
-    this.router.navigateByUrl(`/tabs/quotes/${quotesId}`);
-  }
-
   loadQuotes(){
       this.quotes = this.api.getQuotes(this.offset);
       this.quotes.subscribe(data => {console.log('myQuotes: ',data);
