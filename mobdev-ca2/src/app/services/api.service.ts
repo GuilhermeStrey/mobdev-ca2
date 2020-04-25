@@ -27,7 +27,7 @@ export class ApiService {
       return this.http.get(`https://breakingbadapi.com/api/characters/${id}`) 
   } 
 
-  getQuotes() {
+  getQuotes(offset) {
       return this.http.get(`https://breakingbadapi.com/api/quotes`) 
   }
 
