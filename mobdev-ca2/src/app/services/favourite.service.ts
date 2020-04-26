@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
+import { zip } from 'rxjs';
 
 const STORAGE_KEY = 'favoriteEpisodes';
 
@@ -21,7 +22,7 @@ export class FavouriteService {
     });
   }
  
-  favouriteFilm(episodeId) {
+  favouriteEpisode(episodeId) {
     return this.getAllFavouriteEpisodes().then(result => {
       if (result) {
         result.push(episodeId);
@@ -32,7 +33,7 @@ export class FavouriteService {
     });
   }
  
-  unfavouriteFilm(episodeId) {
+  unfavouriteEpisode(episodeId) {
     return this.getAllFavouriteEpisodes().then(result => {
       if (result) {
         var index = result.indexOf(episodeId);
