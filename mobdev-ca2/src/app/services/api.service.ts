@@ -10,17 +10,14 @@ export class ApiService {
 
   getEpisodes(offset) {
       return this.http.get(`https://breakingbadapi.com/api/episodes`) 
-      //return this.http.get(`https://8100-aefd1589-6ba1-4286-b8b9-26e2ed703837.ws-eu01.gitpod.io/assets/episodes.json`)
   }
 
   getEpisode(id) {
       return this.http.get(`https://breakingbadapi.com/api/episodes/${id}`) 
-      //return this.http.get(`https://8100-aefd1589-6ba1-4286-b8b9-26e2ed703837.ws-eu01.gitpod.io/assets/episodes.json`)
   }
 
   getCharacters(offset) {
-      return this.http.get(`https://breakingbadapi.com/api/characters?limit=25&offset=${offset}`) 
-      //return this.http.get(`https://8100-aefd1589-6ba1-4286-b8b9-26e2ed703837.ws-eu01.gitpod.io/assets/characters.json`)
+      return this.http.get(`https://breakingbadapi.com/api/characters?limit=100&offset=${offset}`) 
   }
 
   getCharacter(id) {
